@@ -1,0 +1,14 @@
+.square {
+	position: relative;
+	overflow: hidden;
+}
+.square::after,
+.square::before {
+	width: 200%;
+	height: 27%;
+	content: '';
+	position: absolute;
+	top: 38%;
+	background: linear-gradient(90deg, rgba(251, 251, 251, 1) 0%, rgba(156, 69, 251, 1) 28%);
+	z-index: 1;
+}

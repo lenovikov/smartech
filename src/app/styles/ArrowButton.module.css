@@ -1,0 +1,26 @@
+.buttonNext::before {
+	content: url('../assets/arrow-r.png');
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0;
+}
+
+.buttonPrev::before {
+	content: url('../assets/arrow-l.png');
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0;
+}
+
+.button {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	background-color: var(--purple);
+}

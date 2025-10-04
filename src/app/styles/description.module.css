@@ -1,0 +1,21 @@
+.description {
+	margin-bottom: 20px;
+}
+
+.details {
+	cursor: pointer;
+}
+
+.details[open] + .content {
+	grid-template-rows: 1fr;
+}
+
+.content {
+	overflow: hidden;
+}
+
+.contentBody {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition-duration: 0.3s;
+}

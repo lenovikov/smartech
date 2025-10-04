@@ -1,0 +1,34 @@
+.writeUsButtonDesktop:hover + .desktopWriteUsCommunicationButton {
+	z-index: 5;
+	visibility: visible;
+	transform: translate(0px, -86px);
+}
+
+.desktopWriteUsCommunicationButton:hover {
+	z-index: 5;
+	visibility: visible;
+	transform: translate(0px, -86px);
+}
+
+.desktopWriteUsCommunicationButton {
+	z-index: 5;
+	transition: all 500ms;
+	display: block;
+	visibility: hidden;
+	transform: translate(0px, 0);
+}
+
+.mobileWriteUsCommunicationButton {
+	position: absolute;
+	top: 0;
+	left: 2px;
+	visibility: hidden;
+	transition: all 0.3s ease-in-out;
+	transform: translateY(0%);
+}
+
+.mobileWriteUsCommunicationButton.open {
+	visibility: visible;
+	transform: translateY(-110%);
+}
+/* !mo */

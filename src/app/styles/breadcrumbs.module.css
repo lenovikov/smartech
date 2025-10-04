@@ -1,0 +1,15 @@
+.breadcrumbRoute {
+	position: relative;
+	margin-right: 20px;
+}
+
+.breadcrumbRoute::after {
+	position: absolute;
+	right: -16px;
+	top: 2px;
+	content: url('../assets/breadcrumb-arr.png');
+}
+
+.breadcrumbRoute:last-child::after {
+	display: none;
+}
