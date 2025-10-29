@@ -12,7 +12,21 @@ export const Guarantee: FC<IGuarantee> = () => {
 					<span>
 						Мы предоставляем официальную гарантию на 1 год, которая распространяется на любые заводские браки.
 					</span>
-					<Text className='text-purple py-7'>Гарантийными случаями не являются:</Text>
+
+					<div className='mt-2'>
+						<span>Гарантийное обслуживание осуществляется сервисным центром:</span>
+						<ul>
+							<li className='text-base'>ЧП "РадикальСервис"</li>
+							<li className='text-base'>Адрес: Ул. Алибегова, 14</li>
+							<li className='text-base'>Контактный номер: +375333783859</li>
+							<li className='text-base'>ремя работы сервисного центра:</li>
+							<li className='text-base'>С 09.00 до 19.00 в будние дни.</li>
+							<li className='text-base'>С 11.00 до 15.00 - суббота</li>
+							<li className='text-base'>Выходной- воскресенье.</li>
+						</ul>
+					</div>
+
+					<Text className='text-purple mt-7 mb-3'>Гарантийными случаями не являются:</Text>
 					<ul className=''>
 						<li className='flex mb-5'>
 							<Text className='mr-1'>1.</Text>
