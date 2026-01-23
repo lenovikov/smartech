@@ -46,11 +46,11 @@ export const Delivery: FC<IDelivery> = () => {
 							</li>
 							<li className='flex'>
 								<span className='mr-1 font-semibold'>-</span>
-								<span>График самовывоза: пн, ср, пт, с 16.00 до 19.00</span>
+								<span>Забрать товар можно с понедельника по пятницу после согласовании времени самовывоза</span>
 							</li>
 							<li className='flex'>
 								<span className='mr-1 font-semibold'>-</span>
-								<span>Адрес самовывоза - ул. Энгельса, 34</span>
+								<span>Адрес самовывоза - ул. Бирюзова 12а, каб. 8</span>
 							</li>
 							<li className='flex'>
 								<span className='mr-1 font-semibold'>-</span>

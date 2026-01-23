@@ -24,7 +24,6 @@ export default async function Home() {
 
 	return (
 		<>
-			<RedirectTo />
 			<AdsModal banners={banners} />
 			<WelcomeScreen banners={banners} />
 			<GoodsSet />

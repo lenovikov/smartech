@@ -19,7 +19,7 @@ const GuaranteeImage = () => {
 						handleClick={() => setIsShowImage(true)}
 						className='py-3 px-5 bg-purple text-white max-lg:text-sm z-20 absolute left-50 top-50'
 					>
-						Посмотрет гарантийны талон
+						Посмотреть гарантийный талон
 					</Button>
 				</div>
 			</div>

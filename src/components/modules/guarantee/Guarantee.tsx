@@ -16,7 +16,7 @@ export const Guarantee: FC<IGuarantee> = () => {
 					<div className='mt-2'>
 						<span>Гарантийное обслуживание осуществляется сервисным центром:</span>
 						<ul>
-							<li className='text-base'>ЧП "РадикальСервис"</li>
+							<li className='text-base'>ООО "КОММЕРСУС"</li>
 							<li className='text-base'>Адрес: Ул. Алибегова, 14</li>
 							<li className='text-base'>Контактный номер: +375333783859</li>
 							<li className='text-base'>ремя работы сервисного центра:</li>
