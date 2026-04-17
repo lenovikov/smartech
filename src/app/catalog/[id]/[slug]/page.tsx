@@ -37,8 +37,10 @@ async function getCategoryData(id: string) {
 export async function generateStaticParams() {
 	const products: IProduct[] = await getAllProducts()
 
-	return products.map(product => ({
-		id: product.categories?.length ? String(product.categories[0]?.id || 0) : '0',
+	const filteredProducts = products.filter(product => product.categories?.length)
+
+	return filteredProducts.map(product => ({
+		id: String(product.categories[0]?.id),
 		slug: product.slug
 	}))
 }
@@ -51,7 +53,7 @@ export default async function ProductPage({ params }: { params: { id: string; sl
 	const { product: searchedProduct } = await getProductData({ slug })
 	const mainProductSlug = slug.split('-').includes('main') && slug.split('-').slice(0, -1).join('-')
 
-	let mainProduct: IProduct[]
+	let mainProduct: IProduct[] = []
 
 	if (mainProductSlug) {
 		const { product } = await getProductData({ slug: mainProductSlug })
@@ -73,7 +75,7 @@ export default async function ProductPage({ params }: { params: { id: string; sl
 		}
 	}
 
-	if (product?.upsell_ids.length) {
+	if (product?.upsell_ids?.length) {
 		const { product: products } = await getProductData(
 			product?.upsell_ids.reduce((acc, id) => {
 				acc[`include[${id}]`] = `${id}`

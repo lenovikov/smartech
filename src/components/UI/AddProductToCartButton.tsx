@@ -17,7 +17,7 @@ interface ICartButton {
 export const AddProductToCartButton: FC<ICartButton> = ({ className, product, isIcon = false }) => {
 	const dispatch = useAppDispatch()
 
-	const { products } = useAppSelector(state => state.persist)
+	const { products } = useAppSelector(state => state.persist) || { products: [] }
 
 	const existProductInCart = products.some(({ id: productId }) => product.id === productId)
 

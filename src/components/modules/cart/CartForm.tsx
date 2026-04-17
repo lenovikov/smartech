@@ -23,7 +23,7 @@ const deliveryVariants = [
 	{ id: 'postEuro', label: 'Европочта - от 5р' }
 ]
 
-export const CartForm = ({ products }) => {
+export const CartForm = ({ products }: IProps) => {
 	const {
 		register,
 		handleSubmit,
@@ -31,14 +31,11 @@ export const CartForm = ({ products }) => {
 		formState: { errors }
 	} = useForm()
 
-	console.log(products)
-
 	const [selectedOption, setSelectedOption] = useState('pickup')
 	const [isLoading, setLoading] = useState(false)
 	const [isSuccess, setSuccess] = useState(false)
 
 	const onSubmit = async (data: any) => {
-		console.log(data, deliveryVariants.find(({ id }) => id === selectedOption)?.label)
 		const delivery = deliveryVariants.find(({ id }) => id === selectedOption)?.label
 		const productsList = products.map(({ name, quantity, cost }) => `${name} ${quantity}шт ${cost}byn \n`)
 		setLoading(true)
@@ -103,7 +100,9 @@ export const CartForm = ({ products }) => {
 							}`}
 							placeholder='Введите имя'
 						/>
-						{errors.firstName && <p className='mt-1 text-sm text-red-600'>{errors.firstName.message}</p>}
+						{errors.firstName?.message && (
+							<p className='mt-1 text-sm text-red-600'>{errors.firstName?.message as string}</p>
+						)}
 					</div>
 
 					<div>
@@ -119,7 +118,7 @@ export const CartForm = ({ products }) => {
 							}`}
 							placeholder='Введите фамилию'
 						/>
-						{errors.lastName && <p className='mt-1 text-sm text-red-600'>{errors.lastName.message}</p>}
+						{errors.lastName && <p className='mt-1 text-sm text-red-600'>{errors.lastName.message as string}</p>}
 					</div>
 
 					<div>
@@ -135,7 +134,7 @@ export const CartForm = ({ products }) => {
 							}`}
 							placeholder='Введите отчество'
 						/>
-						{errors.patronymic && <p className='mt-1 text-sm text-red-600'>{errors.patronymic.message}</p>}
+						{errors.patronymic && <p className='mt-1 text-sm text-red-600'>{errors.patronymic.message as string}</p>}
 					</div>
 				</div>
 				{/* Phone Number */}
@@ -154,7 +153,7 @@ export const CartForm = ({ products }) => {
 						}`}
 						placeholder={__COUNTRY__ === 'RU' ? '+7 (999) 999-99-99' : '+375 (99) 999-99-99'}
 					/>
-					{errors.phone && <p className='mt-1 text-sm text-red-600'>{errors.phone.message}</p>}
+					{errors.phone && <p className='mt-1 text-sm text-red-600'>{errors.phone.message as string}</p>}
 				</div>
 				{/* Address */}
 				{!isHiddenAddress && (
@@ -169,7 +168,7 @@ export const CartForm = ({ products }) => {
 							className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200'
 							placeholder='Введите адрес доставки'
 						/>
-						{errors.address && <p className='mt-1 text-sm text-red-600'>{errors.address.message}</p>}
+						{errors.address && <p className='mt-1 text-sm text-red-600'>{errors.address.message as string}</p>}
 					</div>
 				)}
 				{/* Radio Group */}

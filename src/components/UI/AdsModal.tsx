@@ -5,7 +5,7 @@ import { Modal } from '@modules/Modal'
 import Image from 'next/image'
 import { useAppDispatch, useAppSelector } from '@/hooks/store'
 import { IBanner } from '@/types/common'
-import { closeAdsBanner } from '@/store/slices/commonSlice'
+import { closeAdsBanner, CommonState } from '@/store/slices/commonSlice'
 
 interface IAdsModal {
 	banners: IBanner[]
@@ -13,7 +13,7 @@ interface IAdsModal {
 
 export const AdsModal: FC<IAdsModal> = ({ banners }) => {
 	const dispatch = useAppDispatch()
-	const { isAdsBannerShowed } = useAppSelector(state => state.session)
+	const { isAdsBannerShowed } = useAppSelector(state => state.session) as CommonState
 
 	const banner = banners.find(elem => elem.title.rendered === 'modal')?.source_url || ''
 

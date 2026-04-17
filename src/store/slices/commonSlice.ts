@@ -2,7 +2,7 @@ import { ICartProduct, IProduct } from '@/types/common'
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-interface CommonState {
+export interface CommonState {
 	isAdsBannerShowed: boolean
 	installmentsVariants: {}
 }

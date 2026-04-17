@@ -57,7 +57,7 @@ export const ProductCard: FC<IProductCard> = ({
 	const path = href || `${categoryId}/${linkSlug}`
 
 	const handleChangeProduct = color => {
-		const chosenProduct = products?.filter(item => item.slug === `${slug}-${color}`)
+		const chosenProduct = products?.filter(item => item.slug === `${slug}-${color}`) || {}
 
 		setChosenProduct({ ...chosenProduct[0], price, regular_price })
 		setColor(color)
@@ -95,7 +95,7 @@ export const ProductCard: FC<IProductCard> = ({
 						)}
 						<AddProductToCartButton
 							className='py-[12px]'
-							product={{ ...chosenProduct, variant: price ? 'price' : 'regular' }}
+							product={{ ...chosenProduct, variant: price ? 'price' : 'regular' } as IProduct}
 						/>
 					</div>
 				</div>

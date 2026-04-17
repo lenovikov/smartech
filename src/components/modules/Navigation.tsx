@@ -13,7 +13,7 @@ interface INavigation {
 }
 
 export const Navigation: FC<INavigation> = ({ links, className, additionalFunc }) => {
-	const pathname = usePathname()
+	const pathname = usePathname() || ''
 
 	return (
 		<div className={clsx('flex', className)}>

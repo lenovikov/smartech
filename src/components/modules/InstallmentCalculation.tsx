@@ -4,6 +4,7 @@ import { FC, useEffect, useState } from 'react'
 import { Text } from '../UI/Text'
 import { cn } from '@/lib/utils'
 import { IProduct } from '@/types/common'
+import { CommonState } from '@/store/slices/commonSlice'
 
 interface IInstallmentCalculation {
 	isShortVersion?: boolean
@@ -20,18 +21,18 @@ export const InstallmentCalculation: FC<IInstallmentCalculation> = ({
 	changeInstallment,
 	product
 }) => {
-	const { products } = useAppSelector(state => state.persist)
+	const { products } = useAppSelector(state => state.persist) || { products: [] }
 	const foundProductInCart = products.find(({ id: productId }) => product?.id === productId)
 	const [installmentMonth, setInstallmentMonth] = useState(foundProductInCart?.installment?.month || '3')
-	const { installmentsVariants } = useAppSelector(state => state.session)
+	const { installmentsVariants } = useAppSelector(state => state.session) as CommonState
 	const objectKeys = Object.keys(installmentsVariants)
 
 	const priceWithInstallment = isShortVersion
-		? Math.round(+price * (1 + installmentsVariants[objectKeys?.at(-1)] / 100) * (1 + 7 / 100) * 100) / 100
+		? Math.round(+price * (1 + installmentsVariants[objectKeys?.at(-1) || 0] / 100) * (1 + 7 / 100) * 100) / 100
 		: Math.round(+price * (1 + installmentsVariants[installmentMonth] / 100) * (1 + 7 / 100) * 100) / 100
 
 	const monthPayment = isShortVersion
-		? (priceWithInstallment / +objectKeys?.at(-1)).toFixed(2)
+		? (priceWithInstallment / +(objectKeys?.at(-1) || 0)).toFixed(2)
 		: (priceWithInstallment / +installmentMonth).toFixed(2)
 
 	const handleChangeInstallment = item => {

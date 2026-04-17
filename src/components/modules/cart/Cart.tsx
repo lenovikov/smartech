@@ -22,7 +22,7 @@ export const metadata = {
 interface ICart {}
 
 export const Cart: FC<ICart> = () => {
-	const { products } = useAppSelector(state => state.persist)
+	const { products } = useAppSelector(state => state.persist) || { products: [] }
 
 	return (
 		<>

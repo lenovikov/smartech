@@ -87,7 +87,7 @@ export const ColorGroup: FC<IColorGroup> = ({ attributes, slug, onChange, color:
 										value='option-one'
 										id='color'
 										checked={isChecked === name}
-										onClick={() => (onChange ? onChange(color) : router.push(`${getProduct(name, slug)}`))}
+										onClick={() => (onChange ? onChange(color) : router.push(`${getProduct(name, slug || '')}`))}
 									/>
 								</div>
 							)}

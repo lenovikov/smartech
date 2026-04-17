@@ -25,7 +25,7 @@ const ImageSlider: FC<IImageSlider> = ({ images: defaultImages = [], className, 
 	const [isShowModal, setIsShowModal] = useState(false)
 	const images = options[0] ? defaultImages.slice(0, 6) : defaultImages
 
-	const pathname = usePathname()
+	const pathname = usePathname() || ''
 	const [chosenImage, setChosenImage] = useState(images[0] || { src: '', name: '', source: '' })
 	const isHiddenGuaranteeIcon = ['48', '27'].includes(pathname.split('/')[2])
 
@@ -91,7 +91,10 @@ const ImageSlider: FC<IImageSlider> = ({ images: defaultImages = [], className, 
 						}}
 					>
 						{options[0] && (
-							<div className='relative' onClick={() => setChosenImage({ src: options[0], name: '', source: 'video' })}>
+							<div
+								className='relative'
+								onClick={() => setChosenImage({ src: options[0], name: '', source: 'video', alt: '', id: 0 })}
+							>
 								<Image
 									width={64}
 									height={80}

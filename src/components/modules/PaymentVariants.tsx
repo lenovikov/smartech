@@ -83,7 +83,7 @@ interface IPaymentVariants {
 }
 
 export const PaymentVariants: FC<IPaymentVariants> = ({ product, regularPrice }) => {
-	const { products } = useAppSelector(state => state.persist)
+	const { products } = useAppSelector(state => state.persist) || { products: [] }
 	const foundProductInCart = products.find(({ id: productId }) => product.id === productId)
 
 	const [variant, setVariant] = useState<'now' | 'installment'>(foundProductInCart?.installment ? 'installment' : 'now')

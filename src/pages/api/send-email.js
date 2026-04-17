@@ -25,7 +25,6 @@ export default async function handler(req, res) {
 			const fields = await req.body
 
 			// Теперь у вас есть объект data
-			console.log('Полученные данные:', fields.address)
 
 			// Парсим входящий запрос с помощью formidable
 
@@ -46,8 +45,6 @@ export default async function handler(req, res) {
       Адрес: ${address}
       Список товаров:
       ${productsList}`
-
-			console.log(mailBody)
 
 			// Настраиваем опции письма
 			const mailOptions = {

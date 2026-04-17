@@ -7,7 +7,7 @@ import { useAppSelector } from '@/hooks/store'
 interface IMainCartIcon {}
 
 export const MainCartIcon: FC<IMainCartIcon> = () => {
-	const { products } = useAppSelector(state => state.persist)
+	const { products } = useAppSelector(state => state.persist) || { products: [] }
 
 	return (
 		<Link
