@@ -38,7 +38,7 @@ export async function generateStaticParams() {
 	const products: IProduct[] = await getAllProducts()
 
 	return products.map(product => ({
-		id: String(product.categories[0]?.id || 0),
+		id: product.categories?.length ? String(product.categories[0]?.id || 0) : '0',
 		slug: product.slug
 	}))
 }

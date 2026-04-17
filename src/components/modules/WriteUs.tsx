@@ -32,7 +32,7 @@ export const WriteUs: FC<IWriteUs> = () => {
 						<div className='w-[300px] h-[40px] relative rounded-t-lg'>
 							<Link
 								className={clsx('z-[50] relative', styles.writeUsButtonDesktop)}
-								href='https://t.me/+ncsQe4IfCFo4NDA6'
+								href='https://t.me/smartech_by'
 								variant='external'
 							>
 								<Button className='w-full h-full' handleClick={() => {}}>
@@ -41,7 +41,7 @@ export const WriteUs: FC<IWriteUs> = () => {
 							</Link>
 							<Link
 								variant='external'
-								href='https://t.me/+ncsQe4IfCFo4NDA6'
+								href='https://t.me/smartech_by'
 								className={styles.desktopWriteUsCommunicationButton}
 							>
 								<div className='flex gap-3 p-2 rounded-lg bg-white hover:shadow-lg'>
@@ -60,7 +60,7 @@ export const WriteUs: FC<IWriteUs> = () => {
 							</Button>
 							<Link
 								variant='external'
-								href='https://t.me/+ncsQe4IfCFo4NDA6'
+								href='https://t.me/smartech_by'
 								className={clsx(styles.mobileWriteUsCommunicationButton, { [styles.open]: showCommunicationVariant })}
 							>
 								<BigTelegramIcon />

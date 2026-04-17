@@ -6,6 +6,7 @@ import { headerLinks } from '@helpers/Consts'
 import { MainCartIcon } from '@UI/MainCartIcon'
 import { MobileNavigation } from '@modules/MobileNavigation'
 import { Link } from '@UI/Link'
+import { Text } from '../UI/Text'
 
 export const Header = () => {
 	return (
@@ -16,6 +17,9 @@ export const Header = () => {
 				</Link>
 				<Navigation className='' links={headerLinks} />
 				<div className='flex items-center'>
+					<Text variant='base' className='text-gray-600 text-opacityPurple mr-2'>
+						+375336370202
+					</Text>
 					<SocialButtons />
 					<MainCartIcon />
 				</div>

@@ -52,7 +52,8 @@
         "./src/app/styles/*"
       ]
     },
-    "strict": false
+    "strict": false,
+    "strictNullChecks": true
   },
   "include": [
     "src/declare.d.ts, next-env.d.ts",

@@ -125,7 +125,7 @@ export const Delivery: FC<IDelivery> = () => {
 					<p className='text-3xl font-semibold text-center mb-8 text-purple'>По странам СНГ</p>
 
 					<li className='flex mb-7 justify-center'>
-						<Link href='https://t.me/+ncsQe4IfCFo4NDA6' variant='external'>
+						<Link href='https://t.me/smartech_by' variant='external'>
 							<Button className='py-3 px-5 bg-purple text-white'>Написать менеджеру</Button>
 						</Link>
 					</li>

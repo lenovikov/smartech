@@ -28,11 +28,7 @@ export const SocialButtons: FC<SocialButtons> = ({ className }) => {
 			>
 				<Image fill={true} className='mx-1' src={TikTokIcon} alt='tiktok' />
 			</Link>
-			<Link
-				className='mr-2 relative w-[26px] h-[26px] tablet:mr-0'
-				variant='external'
-				href='https://t.me/+ncsQe4IfCFo4NDA6'
-			>
+			<Link className='mr-2 relative w-[26px] h-[26px] tablet:mr-0' variant='external' href='https://t.me/smartech_by'>
 				<Image fill={true} className='mx-1' src={TelegramIcon} alt='telegram' />
 			</Link>
 			<Link className='relative w-[26px] h-[26px]' variant='external' href='https://www.instagram.com/smartech.by'>

@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
-import guarantee from '@assets/screenshot.jpg'
+import guarantee from '@assets/screenshot.png'
 import { ReactComponent as CloseIcon } from '@icons/close.svg'
 import { Button } from '@/components/UI/Button'
 import { Modal } from '@modules/Modal'

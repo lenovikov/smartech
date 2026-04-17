@@ -40,7 +40,7 @@ export const DeliveryRu: FC<IDeliveryRu> = () => {
 							По всему Миру
 						</Text>
 
-						<Link href='https://t.me/+ncsQe4IfCFo4NDA6' variant='primary'>
+						<Link href='https://t.me/smartech_by' variant='primary'>
 							<Button className='px-4 py-3' variant='primary'>
 								Написать менеджеру
 							</Button>

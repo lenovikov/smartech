@@ -26,7 +26,7 @@ export default async function Home() {
 		<>
 			<AdsModal banners={banners} />
 			<WelcomeScreen banners={banners} />
-			<GoodsSet />
+
 			<ContentWrapper title='Категории'>
 				<CommonList<ICategory>
 					className='gap-16 grid grid-cols-4 tablet:grid-cols-2 tablet:justify-items-center mobile:gap-6'

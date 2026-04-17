@@ -9,6 +9,7 @@ interface IButton {
 	className?: string
 	href?: string
 	disabled?: boolean
+	type?: 'button' | 'submit'
 }
 
 const styles = {
@@ -19,10 +20,18 @@ const styles = {
 		'transition ease-out duration-500 rounded-md border border-purple text-transparent-purple hover:bg-hover-purple hover:text-white hover:bg-purple',
 	icon: '',
 	default: '',
-	disabled: 'bg-white text-blackPurple border border-opacityPurple rounded-md'
+	disabled: 'bg-white text-blackPurple border border-opacityPurple rounded-md cursor-not-allowed'
 } as const
 
-export const Button: FC<IButton> = ({ handleClick, variant = 'primary', className, children, href, disabled }) => {
+export const Button: FC<IButton> = ({
+	handleClick,
+	variant = 'primary',
+	className,
+	children,
+	href,
+	disabled,
+	type
+}) => {
 	if (variant === 'icon') {
 		return (
 			<button disabled={disabled} className={clsx(styles.icon, styles.common, className)} onClick={handleClick}>
@@ -33,6 +42,7 @@ export const Button: FC<IButton> = ({ handleClick, variant = 'primary', classNam
 
 	return (
 		<button
+			type={type}
 			disabled={disabled}
 			className={clsx(disabled ? styles.disabled : styles[variant], styles.common, className)}
 			onClick={handleClick}

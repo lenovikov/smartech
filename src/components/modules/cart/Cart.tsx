@@ -11,6 +11,7 @@ import { Button } from '@/components/UI/Button'
 import { getProductsSum, getProductsWithoutInstallment } from '@/helpers/helpers'
 import { EmptyCartModal } from '@modules/cart/EmptyCartModal'
 import { Breadcrumbs } from '@modules/breadcrumbs/Breadcrumbs'
+import { CartForm } from './CartForm'
 
 const isRussia = __COUNTRY__ === 'RU'
 
@@ -23,8 +24,6 @@ interface ICart {}
 export const Cart: FC<ICart> = () => {
 	const { products } = useAppSelector(state => state.persist)
 
-	const sumWithoutInstallment = getProductsWithoutInstallment(products)
-
 	return (
 		<>
 			<EmptyCartModal isOpen={!products.length} />
@@ -33,13 +32,11 @@ export const Cart: FC<ICart> = () => {
 				<Text className='w-full text-left font-semibold text-3xl mb-5'>Корзина</Text>
 				<div className='gap-16 flex-row flex w-full tablet:flex-wrap'>
 					<div className='basis-2/3 tablet:basis-full'>
-						{
-							<CommonList<ICartProduct>
-								className='flex flex-col'
-								items={products}
-								renderItem={product => <CartItem product={product} />}
-							/>
-						}
+						<CommonList<ICartProduct>
+							className='flex flex-col'
+							items={products}
+							renderItem={product => <CartItem product={product} />}
+						/>
 					</div>
 
 					<div className='flex flex-col basis-1/3 tablet:basis-full'>
@@ -48,37 +45,22 @@ export const Cart: FC<ICart> = () => {
 							<div className='bg-[#dadada] w-[full] h-px relative overflow-hidden mb-3' />
 							<Text className='mb-4'>Товаров : {products.length}</Text>
 							<Text>Общая стоимость заказа:</Text>
-							<Price country={__COUNTRY__} className={{ text: 'text-xl font-semibold' }}>
-								{getProductsSum(products)}
-							</Price>
-							{!isRussia && !!sumWithoutInstallment && (
-								<>
-									<Text className='mt-4'>Сейчас к оплате:</Text>
-									<Price country={__COUNTRY__} className={{ text: 'text-xl font-semibold' }}>
-										{sumWithoutInstallment}
-									</Price>
-								</>
-							)}
+							<div className='flex items-end gap-x-2'>
+								<Price country={__COUNTRY__} className={{ text: 'text-xl font-semibold' }}>
+									{getProductsSum(products)}
+								</Price>
+								+ Доставка
+							</div>
+
 							<div className='bg-gray-200 w-[full] h-px relative  mb-3' />
 							<div className='py-3 flex flex-col'>
-								<p className='pb-5'>
-									Пожалуйста, сделайте скриншот вашей корзины и отправьте нашему менеджеру по ссылке ниже. Или вы можете
-									просто написать, что именно вас интересует. Чат с менеджером доступен по кнопке ниже. Мы онлайн
+								<p>
+									После оформления заказа, с Вами свяжется менеджер для подтверждения заказа и ответит на все Ваши
+									вопросы.
 								</p>
-								<Link href='https://t.me/+ncsQe4IfCFo4NDA6' variant='external' className='mb-3'>
-									<Button className='px-4 py-3 w-full' variant='primary'>
-										Написать менеджеру
-									</Button>
-								</Link>
-								{!isRussia && (
-									<Link href='https://t.me/+ncsQe4IfCFo4NDA6' variant='external'>
-										<Button className='px-4 py-3 w-full' variant='primary'>
-											Оформить в рассрочку
-										</Button>
-									</Link>
-								)}
 							</div>
 						</div>
+						<CartForm products={products} />
 					</div>
 				</div>
 			</div>

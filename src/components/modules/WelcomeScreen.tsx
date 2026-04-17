@@ -39,11 +39,7 @@ export const WelcomeScreen: FC<IWelcomeScreen> = ({ banners }) => {
 								</Button>
 							</Link>
 
-							<Link
-								href='https://t.me/+ncsQe4IfCFo4NDA6'
-								variant='external'
-								className='mobile:text-center mobile:w-auto'
-							>
+							<Link href='https://t.me/smartech_by' variant='external' className='mobile:text-center mobile:w-auto'>
 								<Button className='w-[203px] py-3 tablet:w-[220px]  mobile:px-1 mobile:text-sm' variant='secondary'>
 									Написать менеджеру
 								</Button>
