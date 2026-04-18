@@ -27,9 +27,6 @@ export const Footer = () => {
 					<Logo className='tablet:mb-4' />
 					<Navigation links={footerLinks} className='flex tablet:mb-1 tablet:flex-col tablet:text-center tablet:mb-4' />
 					<SocialButtons className='hidden mobile:flex tablet:mr-0 justify-around' />
-					<Text variant='base' className='text-gray-600 text-opacityPurple mt-2'>
-						+375336370202
-					</Text>
 				</div>
 				<div className='flex items-center justify-between pb-10'>
 					<Text variant='base'>

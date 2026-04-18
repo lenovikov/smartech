@@ -17,7 +17,7 @@ export const Header = () => {
 				</Link>
 				<Navigation className='' links={headerLinks} />
 				<div className='flex items-center'>
-					<Text variant='base' className='text-gray-600 text-opacityPurple mr-2'>
+					<Text variant='semi' className='mr-2'>
 						+375336370202
 					</Text>
 					<SocialButtons />

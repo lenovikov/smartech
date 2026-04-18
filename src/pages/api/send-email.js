@@ -24,11 +24,6 @@ export default async function handler(req, res) {
 		try {
 			const fields = await req.body
 
-			// Теперь у вас есть объект data
-
-			// Парсим входящий запрос с помощью formidable
-
-			// Собираем данные из формы
 			const { firstName, lastName, patronymic, phone, address, delivery, productsList } = fields
 
 			// Создаем текст письма
@@ -49,8 +44,8 @@ export default async function handler(req, res) {
 			// Настраиваем опции письма
 			const mailOptions = {
 				from: ``,
-				to: 'lnovikov853@gmail.com', // Email, на который придет письмо
-				subject: `Новое сообщение от `,
+				to: 'smartechbyshop@gmail.com', // Email, на который придет письмо
+				subject: `Новое сообщение от Магазина`,
 				text: mailBody
 			}
 

@@ -11,6 +11,7 @@ import { SocialButtons } from '../UI/SocialButtons'
 import { headerLinks } from '@/helpers/Consts'
 import { Link } from '@UI/Link'
 import styles from '@styles/navigation.module.css'
+import { Text } from '../UI/Text'
 
 interface IMobileNavigation {}
 
@@ -39,6 +40,11 @@ export const MobileNavigation: FC<IMobileNavigation> = () => {
 			<div onClick={handleOpenMenu} className={clsx(styles.navigationMobileMenu, { [styles.open]: isOpen })}>
 				<div className='flex basis-1/2 flex-col bg-purple pt-[72px]'>
 					<Navigation links={headerLinks} className={styles.mobileBurgerText} />
+					<a href='tel:+375336370202' className='ml-4 mb-4'>
+						<Text variant='semi' className='text-white'>
+							+375336370202
+						</Text>
+					</a>
 					<SocialButtons className='ml-5' />
 				</div>
 			</div>
