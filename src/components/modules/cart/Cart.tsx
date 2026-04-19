@@ -23,6 +23,7 @@ interface ICart {}
 
 export const Cart: FC<ICart> = () => {
 	const { products } = useAppSelector(state => state.persist) || { products: [] }
+	const hasInstalment = products.some(product => product?.installment)
 
 	return (
 		<>
@@ -53,12 +54,14 @@ export const Cart: FC<ICart> = () => {
 							</div>
 
 							<div className='bg-gray-200 w-[full] h-px relative  mb-3' />
-							<div className='py-3 flex flex-col'>
-								<p>
-									После оформления заказа, с Вами свяжется менеджер для подтверждения заказа и ответит на все Ваши
-									вопросы.
-								</p>
-							</div>
+							{!hasInstalment && (
+								<div className='py-3 flex flex-col'>
+									<p>
+										После оформления заказа, с Вами свяжется менеджер для подтверждения заказа и ответит на все Ваши
+										вопросы.
+									</p>
+								</div>
+							)}
 						</div>
 						<CartForm products={products} />
 					</div>
