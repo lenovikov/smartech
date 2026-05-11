@@ -28,7 +28,7 @@ export const Delivery: FC<IDelivery> = () => {
 							</li>
 							<li className='flex'>
 								<span className='mr-1 font-semibold'>-</span>
-								<span>График доставки: пн - пт, с 11.00 до 18.00 или с 18.00 до 21.00</span>
+								<span>График доставки: пн - пт, с 11.00 до 19.00</span>
 							</li>
 							<li>Стоимость доставки уточнять у менеджера</li>
 

@@ -22,7 +22,7 @@ export const Navigation: FC<INavigation> = ({ links, className, additionalFunc }
 
 				return (
 					<Link
-						className='mx-5 navigation-link'
+						className='mx-3 navigation-link'
 						key={label}
 						href={href}
 						variant='primary'
