@@ -3,10 +3,12 @@ import GuaranteeImage from './GuaranteeImage'
 import { Text } from '@/components/UI/Text'
 
 interface IGuarantee {}
+import guarantee from '@assets/screenshot.png'
+import recipe from '@assets/чек.png'
 
 export const Guarantee: FC<IGuarantee> = () => {
 	return (
-		<div className='flex items-center tablet:flex-wrap'>
+		<div className='flex items-start tablet:flex-wrap'>
 			<div className='basis-2/3 mr-10 tablet:basis-full'>
 				<div className='text-xl mobile:text-sm'>
 					<span>
@@ -67,7 +69,12 @@ export const Guarantee: FC<IGuarantee> = () => {
 				</div>
 			</div>
 			<div className='basis-1/3 max-lg:basis-full mt-3 tablet:basis-full'>
-				<GuaranteeImage />
+				<div>
+					<GuaranteeImage img={guarantee} name={'Посмотреть гарантийный талон'} alt={'Гарантийный талон'} />
+				</div>
+				<div className='mt-2'>
+					<GuaranteeImage img={recipe} name={'Посмотреть чек'} alt={'Чек'} />
+				</div>
 			</div>
 		</div>
 	)
